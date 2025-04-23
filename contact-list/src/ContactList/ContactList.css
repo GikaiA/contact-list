@@ -1,28 +1,129 @@
-.contact-list{
+.contact-list {
     display: block;
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-
-.contact-form{
+.contact-form {
     display: inline-block;
     margin: 40px;
-
+    background-color: #f5f5f5;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-label{
-    display: flex;
-    font-size: 20px;
-}
-
-.input-field{
+label {
     display: block;
-    width: 200px;
-    font-size: 22px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: black;
 }
 
-.submit-button{
+.input-field {
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.contacts-display {
+    margin-top: 40px;
+}
+
+.contact-item {
+    background-color: #fff;
+    color: black;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-actions {
     display: flex;
-    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #1976D2;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.no-contacts {
     text-align: center;
+    color: #666;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #f44336;
+    background-color: #ffebee;
+    border-radius: 4px;
+    margin: 20px 0;
 }
