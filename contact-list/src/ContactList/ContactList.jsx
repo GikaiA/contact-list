@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ContactList.css';
 
 function ContactList() {
-  const [contacts, setContacts] = useState([]);
+  // Initialize contacts from localStorage
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = localStorage.getItem('contacts');
+    return savedContacts ? JSON.parse(savedContacts) : [];
+  });
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -10,6 +15,12 @@ function ContactList() {
     birthday: ''
   });
   const [editingId, setEditingId] = useState(null);
+
+  // Save contacts to localStorage whenever they change
+  useEffect(() => {
+    console.log('Saving contacts to localStorage:', contacts);
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,15 +32,22 @@ function ContactList() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newContact = {
+      ...formData,
+      id: editingId || Date.now()
+    };
+
     if (editingId) {
       // Update existing contact
-      setContacts(prev => prev.map(contact => 
-        contact.id === editingId ? { ...formData, id: editingId } : contact
-      ));
+      const updatedContacts = contacts.map(contact => 
+        contact.id === editingId ? newContact : contact
+      );
+      setContacts(updatedContacts);
     } else {
       // Add new contact
-      setContacts(prev => [...prev, { ...formData, id: Date.now() }]);
+      setContacts(prevContacts => [...prevContacts, newContact]);
     }
+
     // Reset form
     setFormData({
       firstName: '',
