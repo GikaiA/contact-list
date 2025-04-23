@@ -1,0 +1,28 @@
+.contact-list{
+    display: block;
+    text-align: center;
+}
+
+
+.contact-form{
+    display: inline-block;
+    margin: 40px;
+
+}
+
+label{
+    display: flex;
+    font-size: 20px;
+}
+
+.input-field{
+    display: block;
+    width: 200px;
+    font-size: 22px;
+}
+
+.submit-button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
